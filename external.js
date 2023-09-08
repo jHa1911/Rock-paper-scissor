@@ -32,27 +32,41 @@ function resetGame() {
     document.getElementById("finalResult").textContent = "";
 }
 
-document.getElementById("submit").addEventListener("click", () => {
+
+
+
+function startGame(choice){
     if (rounds < 5) {
-        const userChoice = document.getElementById("userChoice").value.toLowerCase();
-        if (choices.includes(userChoice)) {
-            const computerChoice = computerPlay();
-            const result = playRound(userChoice, computerChoice);
-            document.getElementById("roundResult").textContent = result;
-            rounds++;
-            if (rounds === 5) {
-                if (userWins > computerWins) {
-                    document.getElementById("finalResult").textContent = "You win the game!";
-                } else if (computerWins > userWins) {
-                    document.getElementById("finalResult").textContent = "Computer wins the game!";
-                } else {
-                    document.getElementById("finalResult").textContent = "It's a tie game!";
-                }
+        const computerChoice = computerPlay();
+        const result = playRound(choice, computerChoice);
+        document.getElementById("roundResult").textContent = result;
+        rounds++;
+        if (rounds === 5) {
+            if (userWins > computerWins) {
+                document.getElementById("finalResult").textContent = "You win the game!";
+            } else if (computerWins > userWins) {
+                document.getElementById("finalResult").textContent = "Computer wins the game!";
+        }else {
+                document.getElementById("finalResult").textContent = "It's a tie game!";
             }
-        } else {
-            document.getElementById("roundResult").textContent = "Invalid choice. Please enter Rock, Paper, or Scissors.";
         }
-    } else {
-        resetGame();
     }
-});
+} 
+
+
+document.getElementById('rockbtn').addEventListener('click', function() {
+    startGame('rock');
+})
+
+document.getElementById('paperbtn').addEventListener('click', function() {
+    startGame('paper');
+})
+
+document.getElementById('scissorbtn').addEventListener('click', function() {
+    startGame('scissor');
+})
+
+
+
+
+
