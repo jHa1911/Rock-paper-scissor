@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissor Game</title>
-    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <h1>Rock Paper Scissors</h1>
+
+    <div>
+        <p>Rounds:</p>
+    </div>
     
     <div>
         <button id="rockbtn">
@@ -24,6 +28,18 @@
         </button>
     </div>
 
+    <div>
+        <p>
+            human:
+        </p>
+        <p id="userpoints"></p>
+
+        <p>
+            Computer:
+        </p>
+        <p id="computerpoints"></p>
+    </div>
+
     <div id="roundResult">
         <p>Round:</p>
     </div>
@@ -31,6 +47,8 @@
     <div id="finalResult">
         <p>Final:</p>
     </div>
+
+    <button id="newGameButton">Play Again</button>
 
     <script src="external.js"></script>
     

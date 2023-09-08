@@ -17,10 +17,12 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === "scissors" && computerSelection === "paper")
     ) {
         userWins++;
-        return "You win this round!";
+        document.getElementById('userpoints').innerHTML = userWins;
+        return `You win! You chose ${playerSelection}, I choose ${computerSelection}.`;
     } else {
         computerWins++;
-        return "Computer wins this round!";
+        document.getElementById('computerpoints').innerHTML = computerWins;
+        return `I win! You chose ${playerSelection}, I choose ${computerSelection}.`;
     }
 }
 
@@ -30,6 +32,8 @@ function resetGame() {
     computerWins = 0;
     document.getElementById("roundResult").textContent = "";
     document.getElementById("finalResult").textContent = "";
+    document.getElementById("userpoints").innerHTML = "0";
+    document.getElementById("computerpoints").innerHTML = "0";
 }
 
 
@@ -65,6 +69,10 @@ document.getElementById('paperbtn').addEventListener('click', function() {
 document.getElementById('scissorbtn').addEventListener('click', function() {
     startGame('scissor');
 })
+
+document.getElementById('newGameButton').addEventListener('click', function() {
+    resetGame();
+});
 
 
 
