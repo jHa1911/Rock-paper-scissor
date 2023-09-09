@@ -45,6 +45,7 @@ function startGame(choice){
         const result = playRound(choice, computerChoice);
         document.getElementById("roundResult").textContent = result;
         rounds++;
+        document.getElementById("eachRound").textContent = rounds;
         if (rounds === 5) {
             if (userWins > computerWins) {
                 document.getElementById("finalResult").textContent = "You win the game!";

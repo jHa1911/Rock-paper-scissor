@@ -10,34 +10,38 @@
 
     <h1>Rock Paper Scissors</h1>
 
-    <div>
+    <div id="eachRound">
         <p>Rounds:</p>
     </div>
     
-    <div>
-        <button id="rockbtn">
+    <div id="btn">
+        <button id="rockbtn" class="button1 ">
             rock
         </button>
 
-        <button id="paperbtn">
+        <button id="paperbtn" class="button1">
             Paper
         </button>
 
-        <button id="scissorbtn">
+        <button id="scissorbtn" class="button1">
             Scissor
         </button>
     </div>
 
-    <div>
-        <p>
-            human:
-        </p>
-        <p id="userpoints"></p>
+    <div id="box">
+        <div class="playerBox cont">
+            <p>
+                Player:
+            </p>
+            <p id="userpoints"></p>
+        </div>
 
-        <p>
-            Computer:
-        </p>
-        <p id="computerpoints"></p>
+        <div class="computerBox cont">
+            <p>
+                Computer:
+            </p>
+            <p id="computerpoints"></p>
+        </div>
     </div>
 
     <div id="roundResult">
@@ -47,8 +51,19 @@
     <div id="finalResult">
         <p>Final:</p>
     </div>
+    
+    <div class="playAgain">
+        <button id="newGameButton">
+            <span>PLAY AGAIN</span>
+        </button>
+    </div>
 
-    <button id="newGameButton">Play Again</button>
+    <div class="footer">
+        <p>Created by <a href="https://github.com/jHa1911/Rock-paper-scissor/tree/main">jHa1911</a>
+        </p>
+
+    </div>
+    
 
     <script src="external.js"></script>
     
